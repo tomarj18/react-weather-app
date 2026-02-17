@@ -205,3 +205,48 @@ button {
   color: #ff6b6b;
   font-weight: 600;
 }
+
+/* ========================================
+   WEATHER ICON STYLING
+   ======================================== */
+
+/* 
+  Weather Icon - displays icon from OpenWeather API
+  - Adds floating animation for visual interest
+  - Different glow effects for day vs night themes
+*/
+.weather-icon {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation - makes icon gently move up and down */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Night theme - adds pink glow to match galaxy aesthetic */
+.night .weather-icon {
+  filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+}
+
+/* ========================================
+   CURRENT DATE STYLING
+   ======================================== */
+
+/* Display current date below city name */
+.current-date {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
