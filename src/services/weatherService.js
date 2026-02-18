@@ -1,17 +1,40 @@
-// apiKey stores the environment variable VITE_WEATHER_API based on the documentation from Vite https://vite.dev/guide/env-and-mode
-const apiKey = import.meta.env.VITE_WEATHER_API;
+// API key from environment variable
+const API_KEY = import.meta.env.VITE_WEATHER_API;
+
+// Get current weather for a city
 export async function getWeather(city) {
-    // using fetch to grab weather data from openweathermap 2.5 using the syntax provided by the API documentation https://openweathermap.org/current?collection=current_forecast
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`);
-    const data = await response.json();
-    return data;
+  const url =
+    `https://api.openweathermap.org/data/2.5/weather` +
+    `?q=${encodeURIComponent(city)}` +
+    `&appid=${API_KEY}` +
+    `&units=imperial`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    console.log("OpenWeather error:", response.status, err);
+    throw new Error(err?.message || "Failed to fetch weather");
+  }
+
+  return await response.json();
 }
 
-
-// NEW: 5-day forecast function
+// Get 5-day forecast for a city
 export async function getFiveDayForecast(city) {
-    // Fetch 5-day/3-hour forecast from OpenWeather API
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`);
-    const data = await response.json();
-    return data;
+  const url =
+    `https://api.openweathermap.org/data/2.5/forecast` +
+    `?q=${encodeURIComponent(city)}` +
+    `&appid=${API_KEY}` +
+    `&units=imperial`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    console.log("OpenWeather error:", response.status, err);
+    throw new Error(err?.message || "Failed to fetch forecast");
+  }
+
+  return await response.json();
 }
