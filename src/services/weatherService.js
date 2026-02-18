@@ -6,3 +6,12 @@ export async function getWeather(city) {
     const data = await response.json();
     return data;
 }
+
+
+// NEW: 5-day forecast function
+export async function getFiveDayForecast(city) {
+    // Fetch 5-day/3-hour forecast from OpenWeather API
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`);
+    const data = await response.json();
+    return data;
+}
