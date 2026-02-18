@@ -1,41 +1,39 @@
 /**
  * WeatherCard Component
- * Displays the main weather information including city name, icon, temperature, and description
- * Props: city, temp, description, icon (from OpenWeather API)
+ * Displays main weather info with realistic OpenWeather icons
  */
 
 const WeatherCard = ({ city, temp, description, icon }) => {
-  // Get current date and format it nicely
+  
+  // Create and format current date
   const currentDate = new Date();
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
   return (
     <div className="weather-card">
-      {/* City name header */}
+      {/* City name */}
       <h1>{city} Weather</h1>
       
-      {/* Current date display */}
+      {/* Current date */}
       <p className="current-date">{formattedDate}</p>
       
       {/* 
-        Weather Icon from OpenWeather API
-        - Dynamically builds the icon URL using the icon code from API
-        - Only renders if icon code exists
-        - Example: icon "10d" becomes https://openweathermap.org/img/wn/10d@2x.png
+        Weather icon - using @4x.png for highest quality/detail
+        OpenWeather has specific icons for each weather condition
       */}
       {icon && (
         <img 
-          src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+          src={`https://openweathermap.org/img/wn/${icon}@4x.png`}
           alt={description}
-          className="weather-icon"
+          className="weather-icon-image"
         />
       )}
       
-      {/* Current temperature in Fahrenheit */}
+      {/* Current temperature */}
       <p className="temperature">{temp}°F</p>
       
-      {/* Weather condition description (e.g., "clear sky", "light rain") */}
+      {/* Weather description */}
       <p className="description">Weather: {description}</p>
     </div>
   );

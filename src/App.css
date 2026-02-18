@@ -36,62 +36,18 @@
   color: #ffffff;
 }
 
-/* Night Theme */
-.app-container.night {
-  background: linear-gradient(135deg, #0B0D21 0%, #1a1b4b 30%, #2d1b69 60%, #5b21b6 100%);
-  position: relative;
-  overflow: hidden;
-}
+/* ========================================
+   FORM STYLING - Simple & Clean
+   ======================================== */
 
-/* Starry background */
-.app-container.night::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-    radial-gradient(2px 2px at 60px 70px, #fff, transparent),
-    radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
-    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-    radial-gradient(2px 2px at 90px 10px, #eee, transparent);
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  opacity: 0.5;
-  animation: twinkle 3s ease-in-out infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-.night .weather-wrapper {
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(236, 72, 153, 0.3);
-  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.2);
-}
-
-.night h1 {
-  color: #ec4899;
-  text-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
-}
-
-.night p {
-  color: #e9d5ff;
-}
-
-/* Form Styling */
+/* Form container */
 form {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
 }
 
+/* Input field - simple white background */
 input {
   flex: 1;
   padding: 12px 20px;
@@ -99,23 +55,16 @@ input {
   border: none;
   font-size: 16px;
   outline: none;
-}
-
-.day input {
   background: rgba(255, 255, 255, 0.9);
   color: #333;
 }
 
-.night input {
-  background: rgba(139, 92, 246, 0.2);
-  border: 1px solid rgba(236, 72, 153, 0.3);
-  color: #e9d5ff;
+/* Placeholder text */
+input::placeholder {
+  color: rgba(100, 100, 100, 0.7);
 }
 
-.night input::placeholder {
-  color: rgba(233, 213, 255, 0.5);
-}
-
+/* Button - simple rounded */
 button {
   padding: 12px 30px;
   border-radius: 25px;
@@ -124,27 +73,199 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.day button {
   background: rgba(255, 255, 255, 0.9);
   color: #667eea;
 }
 
-.day button:hover {
+/* Button hover effect */
+button:hover {
   background: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.night button {
-  background: linear-gradient(135deg, #ec4899, #be185d);
+/* ========================================
+   🌇 SUNSET THEME - Dusk/Twilight Colors
+   ======================================== */
+
+/* Sunset background - oranges, purples, pinks */
+.app-container.sunset {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 20%, #c44569 40%, #785ba3 70%, #4a69bd 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sunset wrapper - warm glow effect */
+.sunset .weather-wrapper {
+  background: rgba(255, 107, 107, 0.15);
+  border: 1px solid rgba(255, 140, 100, 0.4);
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
+}
+
+/* Sunset headings - warm orange/pink */
+.sunset h1 {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 140, 100, 0.6);
+}
+
+/* Sunset paragraph text - light warm color */
+.sunset p {
+  color: #fff5f5;
+}
+
+/* Sunset input placeholder */
+.sunset input::placeholder {
+  color: rgba(100, 100, 100, 0.7);
+}
+
+/* Sunset button hover effect */
+.sunset button:hover {
+  background: linear-gradient(135deg, #ff6348, #ff4757);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5);
+}
+
+/* Sunset weather details cards */
+.sunset .weather-details p {
+  background: rgba(255, 140, 100, 0.2);
+  border: 1px solid rgba(255, 140, 100, 0.3);
+}
+
+/* Sunset forecast title */
+.sunset .forecast-title {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 140, 100, 0.5);
+}
+
+/* Sunset forecast cards */
+.sunset .forecast-day {
+  background: rgba(255, 140, 100, 0.2);
+  border: 1px solid rgba(255, 140, 100, 0.35);
+}
+
+/* Sunset forecast day names */
+.sunset .forecast-day-name {
+  color: #fff9e6;
+}
+
+/* Sunset forecast temperature */
+.sunset .forecast-temp {
   color: #ffffff;
 }
 
+/* Sunset forecast description */
+.sunset .forecast-description {
+  color: #ffe5d9;
+}
+
+/* ========================================
+   🌙 NIGHT THEME - True Nighttime
+   ======================================== */
+
+/* Night background - deep blues */
+.app-container.night {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1d3a 30%, #1e2749 60%, #252b5c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Starry background effect for night theme */
+.app-container.night::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 60px 70px, #ffffff, transparent),
+    radial-gradient(1px 1px at 50px 50px, #e0e0e0, transparent),
+    radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+    radial-gradient(2px 2px at 90px 10px, #ffffff, transparent),
+    radial-gradient(1px 1px at 150px 120px, #e0e0e0, transparent),
+    radial-gradient(2px 2px at 180px 45px, #ffffff, transparent),
+    radial-gradient(1px 1px at 25px 100px, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.7;
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Twinkling animation */
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.7; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+/* Keep your existing stars animation here */
+
+/* Night wrapper - dark blue with light blue border */
+.night .weather-wrapper {
+  background: rgba(20, 30, 60, 0.4);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(100, 150, 255, 0.15);
+}
+
+/* Night headings - white with blue glow */
+.night h1 {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(150, 200, 255, 0.6);
+}
+
+/* Night paragraph text - light blue/white */
+.night p {
+  color: #e8f0ff;
+}
+
+/* Night theme - clean white input like day theme */
+.night input {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: #333;
+}
+
+/* Night theme - button hover */
 .night button:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(236, 72, 153, 0.5);
+  box-shadow: 0 5px 20px rgba(100, 150, 255, 0.5);
+}
+
+/* Night weather details */
+.night .weather-details p {
+  background: rgba(20, 30, 60, 0.4);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+/* Night forecast title */
+.night .forecast-title {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(150, 200, 255, 0.5);
+}
+
+/* Night forecast cards */
+.night .forecast-day {
+  background: rgba(20, 30, 60, 0.5);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+/* Night forecast day names */
+.night .forecast-day-name {
+  color: #a0c4ff;
+}
+
+/* Night forecast temperature */
+.night .forecast-temp {
+  color: #ffffff;
+}
+
+/* Night forecast description */
+.night .forecast-description {
+  color: #d4e4ff;
 }
 
 /* Weather Card */
@@ -215,26 +336,29 @@ button {
   - Adds floating animation for visual interest
   - Different glow effects for day vs night themes
 */
-.weather-icon {
-  width: 120px;
-  height: 120px;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+/* Weather Icon */
+/* ========================================
+   WEATHER ICON STYLING (Font-based)
+   ======================================== */
+
+/* Large weather icon for main weather card */
+.weather-icon-large {
+  font-size: 120px;
+  display: block;
+  margin: 20px auto;
   animation: float 3s ease-in-out infinite;
 }
 
-/* Floating animation - makes icon gently move up and down */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Day theme - white icon with glow */
+.day .weather-icon-large {
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
-/* Night theme - adds pink glow to match galaxy aesthetic */
-.night .weather-icon {
-  filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+/* Night theme - pink/purple icon with glow */
+.night .weather-icon-large {
+  color: #ec4899;
+  text-shadow: 0 0 40px rgba(236, 72, 153, 0.7);
 }
 
 /* ========================================
@@ -249,4 +373,164 @@ button {
   margin-bottom: 20px;
   font-weight: 300;
   letter-spacing: 0.5px;
+}
+
+/* ========================================
+   7-DAY FORECAST STYLING - Phone Layout
+   ======================================== */
+
+/* Main forecast container */
+.forecast-container {
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* Forecast title */
+.forecast-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Day theme - white title */
+.day .forecast-title {
+  color: #ffffff;
+}
+
+/* Sunset theme - white title with warm glow */
+.sunset .forecast-title {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 140, 100, 0.5);
+}
+
+/* Night theme - white title with cool glow */
+.night .forecast-title {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(150, 200, 255, 0.5);
+}
+
+/* Forecast list - vertical stack of rows (like phone) */
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual forecast row - horizontal layout */
+.forecast-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr 100px;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect on rows */
+.forecast-row:hover {
+  transform: translateX(5px);
+}
+
+/* Day theme - forecast rows */
+.day .forecast-row {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Sunset theme - forecast rows */
+.sunset .forecast-row {
+  background: rgba(255, 140, 100, 0.2);
+  border: 1px solid rgba(255, 140, 100, 0.35);
+}
+
+/* Night theme - forecast rows */
+.night .forecast-row {
+  background: rgba(20, 30, 60, 0.5);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+/* Day label (MON, TUE, WED) */
+.forecast-day-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Day theme - day labels */
+.day .forecast-day-label {
+  color: #ffffff;
+}
+
+/* Sunset theme - day labels */
+.sunset .forecast-day-label {
+  color: #fff9e6;
+}
+
+/* Night theme - day labels */
+.night .forecast-day-label {
+  color: #a0c4ff;
+}
+
+/* Weather icon in row */
+.forecast-row-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Weather condition text */
+.forecast-condition {
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+/* Day theme - condition text */
+.day .forecast-condition {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Sunset theme - condition text */
+.sunset .forecast-condition {
+  color: #ffe5d9;
+}
+
+/* Night theme - condition text */
+.night .forecast-condition {
+  color: #d4e4ff;
+}
+
+/* Temperature in row */
+.forecast-temperature {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Day theme - temperature */
+.day .forecast-temperature {
+  color: #ffffff;
+}
+
+/* Sunset theme - temperature */
+.sunset .forecast-temperature {
+  color: #ffffff;
+}
+
+/* Night theme - temperature */
+.night .forecast-temperature {
+  color: #ffffff;
+}
+
+/* Responsive - mobile adjustments */
+@media (max-width: 640px) {
+  .forecast-row {
+    grid-template-columns: 60px 50px 1fr 80px;
+    padding: 12px 15px;
+  }
+  
+  .forecast-row-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
